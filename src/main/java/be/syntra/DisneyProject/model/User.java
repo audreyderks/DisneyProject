@@ -1,26 +1,31 @@
 package be.syntra.DisneyProject.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import org.springframework.data.annotation.Id;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "user")
 public class User {
 
     @Id
-    @Column(name = "user_email", unique = true, nullable = false)
-    private String UserEmail;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long userId;
 
-    @Column(name = "password",nullable = false)
-    private String password;
-
-    @Column(name = "username", nullable = false)
+    @Column(name = "username", nullable = false, unique = true)
     private String userName;
 
+    @Column(name = "user_email", nullable = false)
+    private String UserEmail;
 
-// getters & setters
+    @Column(name = "password", nullable = false)
+    private String password;
+
+    public User(String userName, String userEmail, String password) {
+        this.userName = userName;
+        UserEmail = userEmail;
+        this.password = password;
+    }
+
+    // getters & setters
     public String getUserEmail() {
         return UserEmail;
     }
@@ -39,9 +44,5 @@ public class User {
 
     public String getUserName() {
         return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
     }
 }

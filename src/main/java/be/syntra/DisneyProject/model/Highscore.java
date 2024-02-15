@@ -14,7 +14,7 @@ public class Highscore {
     private long highscoreId;
 
     @ManyToOne
-    @JoinColumn(name = "user_email", nullable=false,unique = true)
+    @JoinColumn(name = "user_email", nullable=false)
     private User user;
 
     @Column(name = "score")
