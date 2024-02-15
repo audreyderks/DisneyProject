@@ -8,7 +8,6 @@ import java.sql.Date;
 @Table(name = "highscore")
 public class Highscore {
 
-    //nakijken
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long highscoreId;
@@ -23,4 +22,31 @@ public class Highscore {
     @Column (name = "Date")
     private Date date;
 
+    public long getHighscoreId() {
+        return highscoreId;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public String getScore() {
+        return score;
+    }
+
+    public void setScore(String score) {
+        this.score = score;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
 }

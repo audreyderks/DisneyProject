@@ -26,6 +26,10 @@ public class User {
     }
 
     // getters & setters
+    public long getUserId() {
+        return userId;
+    }
+
     public String getUserEmail() {
         return UserEmail;
     }
