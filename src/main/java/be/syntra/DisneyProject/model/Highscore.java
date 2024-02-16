@@ -13,7 +13,7 @@ public class Highscore {
     private long highscoreId;
 
     @ManyToOne
-    @JoinColumn(name = "user_email", nullable=false)
+    @JoinColumn(name = "user_name", nullable=false)
     private User user;
 
     @Column(name = "score")
